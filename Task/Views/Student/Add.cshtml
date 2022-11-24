@@ -1,0 +1,9 @@
+﻿@model Student
+
+<form asp-action="Add" asp-controller="Student" method="post">
+    <input class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" type="text"  asp-for="Name" placeholder="Name"/><span asp-validation-for=Name></span> <br />
+    <input class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" type="text" asp-for="Surname" placeholder="Surname" /><span asp-validation-for=Surname></span> <br />
+    <label>Group: </label>
+    <select class="form-select" aria-label="Default select example" asp-for="GroupId" asp-items=@(ViewData["groups"] as IEnumerable<SelectListItem>)></select><br />
+    <input value="Add" type="submit" />
+</form>
